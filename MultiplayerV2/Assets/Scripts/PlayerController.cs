@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(ConfigurableJoint))]
 [RequireComponent(typeof(PlayerMotor))]
 public class PlayerController : MonoBehaviour {
@@ -15,6 +16,11 @@ public class PlayerController : MonoBehaviour {
     private float thrusterForce = 1000f;
 
 
+
+    
+
+
+
     [Header("Spring settings:")]
     //[SerializeField]
     //private JointDriveMode jointMode;
@@ -24,13 +30,16 @@ public class PlayerController : MonoBehaviour {
     private float jointMaxForce = 40f;
 
 
-
+    //Component caching
     private PlayerMotor motor;
     private ConfigurableJoint joint;
+    private Animator animator;
+
     void Start()
     {
         motor = GetComponent<PlayerMotor>();
         joint = GetComponent<ConfigurableJoint>();
+        animator = GetComponent<Animator>();
         SetJointSettings(jointSpring);
     }
 
@@ -47,6 +56,11 @@ public class PlayerController : MonoBehaviour {
 
         //Final movement vector
         Vector3 _velocity = (_movHorizontal + _movVertical) * speed;
+
+        // Animate movement
+        animator.SetFloat("FowardVelocity", _zMovement);
+
+
         //Apply movemnt
         motor.Move(_velocity);
         #endregion
