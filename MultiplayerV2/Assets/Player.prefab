@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 114599362987000652}
   - component: {fileID: 153487181493493914}
   - component: {fileID: 114433590491332480}
+  - component: {fileID: 114519515770357086}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -554,6 +555,17 @@ MonoBehaviour:
   thrusterForce: 1300
   jointSpring: 20
   jointMaxForce: 40
+--- !u!114 &114519515770357086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1998295449084302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6e7ba7eb3070f4087c5f9553d761fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114599362987000652
 MonoBehaviour:
   m_ObjectHideFlags: 1
