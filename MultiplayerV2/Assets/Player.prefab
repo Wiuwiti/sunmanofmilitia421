@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4094992056394150}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4141557810382276}
   - component: {fileID: 33788398008005746}
   - component: {fileID: 23903083555870586}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 124313579598315344}
   - component: {fileID: 92284953465958144}
   - component: {fileID: 81956598661764350}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4052240214461340}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 33949754379940202}
   - component: {fileID: 65963479882083432}
   - component: {fileID: 23552114433908074}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 33378760324264874}
   - component: {fileID: 65388888634475804}
   - component: {fileID: 23734570022152086}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,9 +130,10 @@ GameObject:
   - component: {fileID: 114405484121068002}
   - component: {fileID: 114599362987000652}
   - component: {fileID: 153487181493493914}
-  m_Layer: 0
+  - component: {fileID: 114433590491332480}
+  m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -496,6 +497,8 @@ MonoBehaviour:
   - {fileID: 114453348405304198}
   - {fileID: 20544871468794850}
   - {fileID: 81956598661764350}
+  - {fileID: 114433590491332480}
+  remoteLayerName: RemotePlayer
 --- !u!114 &114405484121068002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -516,6 +519,25 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 10
   m_InterpolateMovement: 1
+--- !u!114 &114433590491332480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1998295449084302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b9ee8c789a8c344e8e42cbf561090ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon:
+    name: Pisto
+    damage: 40
+    range: 200
+  cam: {fileID: 20544871468794850}
+  mask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &114453348405304198
 MonoBehaviour:
   m_ObjectHideFlags: 1
