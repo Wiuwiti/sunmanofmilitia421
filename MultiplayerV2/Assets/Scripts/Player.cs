@@ -43,6 +43,7 @@ public class Player : NetworkBehaviour {
     //    {
     //        RpcTakeDamage(999);
     //    }
+    // huehuehue
     //}
 
     [ClientRpc]
