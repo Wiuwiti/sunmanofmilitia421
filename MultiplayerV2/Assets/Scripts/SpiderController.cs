@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(SpiderMotor))]
 public class SpiderController : MonoBehaviour {
     [SerializeField]
@@ -7,13 +8,14 @@ public class SpiderController : MonoBehaviour {
 
     [SerializeField]
     private float lookSensitivity = 3f;
-
-
+    
     private SpiderMotor motor;
+    private Animator animator;
 
     private void Start()
     {
         motor = GetComponent<SpiderMotor>();
+        animator = GetComponent<Animator>();
     }
 
 
@@ -21,13 +23,14 @@ public class SpiderController : MonoBehaviour {
     {
 
         #region calcaulte normal movement
-        float _xMovement = Input.GetAxisRaw("Horizontal");
-        float _zMovement = Input.GetAxisRaw("Vertical");
+        float _xMovement = Input.GetAxis("Horizontal");
+        float _zMovement = Input.GetAxis("Vertical");
 
         Vector3 _movHorizontal = transform.right * _xMovement;
         Vector3 _movVertical = transform.forward * _zMovement;
 
-        Vector3 _velocity = (_movHorizontal + _movVertical).normalized * speed;
+        Vector3 _velocity = (_movHorizontal + _movVertical) * speed;
+        animator.SetFloat("FowardVelocity", _zMovement);
 
         motor.Move(_velocity);
         #endregion
